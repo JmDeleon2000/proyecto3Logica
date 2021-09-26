@@ -1,0 +1,378 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> S
+Rule 1     S -> LPAREN S RPAREN
+Rule 2     S -> VARIABLE
+Rule 3     S -> CONSTANT
+Rule 4     S -> NEGATION S
+Rule 5     S -> S DOUBLEARROW S
+Rule 6     S -> S ARROW S
+Rule 7     S -> S HAT S
+Rule 8     S -> S OR S
+
+Terminals, with rules where they appear
+
+ARROW                : 6
+CONSTANT             : 3
+DOUBLEARROW          : 5
+HAT                  : 7
+LPAREN               : 1
+NEGATION             : 4
+OR                   : 8
+RPAREN               : 1
+VARIABLE             : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+S                    : 1 4 5 5 6 6 7 7 8 8 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 1
+
+state 1
+
+    (0) S' -> S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+
+state 2
+
+    (1) S -> LPAREN . S RPAREN
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 10
+
+state 3
+
+    (2) S -> VARIABLE .
+
+    DOUBLEARROW     reduce using rule 2 (S -> VARIABLE .)
+    ARROW           reduce using rule 2 (S -> VARIABLE .)
+    HAT             reduce using rule 2 (S -> VARIABLE .)
+    OR              reduce using rule 2 (S -> VARIABLE .)
+    $end            reduce using rule 2 (S -> VARIABLE .)
+    RPAREN          reduce using rule 2 (S -> VARIABLE .)
+
+
+state 4
+
+    (3) S -> CONSTANT .
+
+    DOUBLEARROW     reduce using rule 3 (S -> CONSTANT .)
+    ARROW           reduce using rule 3 (S -> CONSTANT .)
+    HAT             reduce using rule 3 (S -> CONSTANT .)
+    OR              reduce using rule 3 (S -> CONSTANT .)
+    $end            reduce using rule 3 (S -> CONSTANT .)
+    RPAREN          reduce using rule 3 (S -> CONSTANT .)
+
+
+state 5
+
+    (4) S -> NEGATION . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 11
+
+state 6
+
+    (5) S -> S DOUBLEARROW . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 12
+
+state 7
+
+    (6) S -> S ARROW . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 13
+
+state 8
+
+    (7) S -> S HAT . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 14
+
+state 9
+
+    (8) S -> S OR . S
+    (1) S -> . LPAREN S RPAREN
+    (2) S -> . VARIABLE
+    (3) S -> . CONSTANT
+    (4) S -> . NEGATION S
+    (5) S -> . S DOUBLEARROW S
+    (6) S -> . S ARROW S
+    (7) S -> . S HAT S
+    (8) S -> . S OR S
+
+    LPAREN          shift and go to state 2
+    VARIABLE        shift and go to state 3
+    CONSTANT        shift and go to state 4
+    NEGATION        shift and go to state 5
+
+    S                              shift and go to state 15
+
+state 10
+
+    (1) S -> LPAREN S . RPAREN
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+    RPAREN          shift and go to state 16
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+
+state 11
+
+    (4) S -> NEGATION S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+  ! shift/reduce conflict for DOUBLEARROW resolved as shift
+  ! shift/reduce conflict for ARROW resolved as shift
+  ! shift/reduce conflict for HAT resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+    $end            reduce using rule 4 (S -> NEGATION S .)
+    RPAREN          reduce using rule 4 (S -> NEGATION S .)
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+  ! DOUBLEARROW     [ reduce using rule 4 (S -> NEGATION S .) ]
+  ! ARROW           [ reduce using rule 4 (S -> NEGATION S .) ]
+  ! HAT             [ reduce using rule 4 (S -> NEGATION S .) ]
+  ! OR              [ reduce using rule 4 (S -> NEGATION S .) ]
+
+
+state 12
+
+    (5) S -> S DOUBLEARROW S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+  ! shift/reduce conflict for DOUBLEARROW resolved as shift
+  ! shift/reduce conflict for ARROW resolved as shift
+  ! shift/reduce conflict for HAT resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+    $end            reduce using rule 5 (S -> S DOUBLEARROW S .)
+    RPAREN          reduce using rule 5 (S -> S DOUBLEARROW S .)
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+  ! DOUBLEARROW     [ reduce using rule 5 (S -> S DOUBLEARROW S .) ]
+  ! ARROW           [ reduce using rule 5 (S -> S DOUBLEARROW S .) ]
+  ! HAT             [ reduce using rule 5 (S -> S DOUBLEARROW S .) ]
+  ! OR              [ reduce using rule 5 (S -> S DOUBLEARROW S .) ]
+
+
+state 13
+
+    (6) S -> S ARROW S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+  ! shift/reduce conflict for DOUBLEARROW resolved as shift
+  ! shift/reduce conflict for ARROW resolved as shift
+  ! shift/reduce conflict for HAT resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+    $end            reduce using rule 6 (S -> S ARROW S .)
+    RPAREN          reduce using rule 6 (S -> S ARROW S .)
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+  ! DOUBLEARROW     [ reduce using rule 6 (S -> S ARROW S .) ]
+  ! ARROW           [ reduce using rule 6 (S -> S ARROW S .) ]
+  ! HAT             [ reduce using rule 6 (S -> S ARROW S .) ]
+  ! OR              [ reduce using rule 6 (S -> S ARROW S .) ]
+
+
+state 14
+
+    (7) S -> S HAT S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+  ! shift/reduce conflict for DOUBLEARROW resolved as shift
+  ! shift/reduce conflict for ARROW resolved as shift
+  ! shift/reduce conflict for HAT resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+    $end            reduce using rule 7 (S -> S HAT S .)
+    RPAREN          reduce using rule 7 (S -> S HAT S .)
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+  ! DOUBLEARROW     [ reduce using rule 7 (S -> S HAT S .) ]
+  ! ARROW           [ reduce using rule 7 (S -> S HAT S .) ]
+  ! HAT             [ reduce using rule 7 (S -> S HAT S .) ]
+  ! OR              [ reduce using rule 7 (S -> S HAT S .) ]
+
+
+state 15
+
+    (8) S -> S OR S .
+    (5) S -> S . DOUBLEARROW S
+    (6) S -> S . ARROW S
+    (7) S -> S . HAT S
+    (8) S -> S . OR S
+
+  ! shift/reduce conflict for DOUBLEARROW resolved as shift
+  ! shift/reduce conflict for ARROW resolved as shift
+  ! shift/reduce conflict for HAT resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+    $end            reduce using rule 8 (S -> S OR S .)
+    RPAREN          reduce using rule 8 (S -> S OR S .)
+    DOUBLEARROW     shift and go to state 6
+    ARROW           shift and go to state 7
+    HAT             shift and go to state 8
+    OR              shift and go to state 9
+
+  ! DOUBLEARROW     [ reduce using rule 8 (S -> S OR S .) ]
+  ! ARROW           [ reduce using rule 8 (S -> S OR S .) ]
+  ! HAT             [ reduce using rule 8 (S -> S OR S .) ]
+  ! OR              [ reduce using rule 8 (S -> S OR S .) ]
+
+
+state 16
+
+    (1) S -> LPAREN S RPAREN .
+
+    DOUBLEARROW     reduce using rule 1 (S -> LPAREN S RPAREN .)
+    ARROW           reduce using rule 1 (S -> LPAREN S RPAREN .)
+    HAT             reduce using rule 1 (S -> LPAREN S RPAREN .)
+    OR              reduce using rule 1 (S -> LPAREN S RPAREN .)
+    $end            reduce using rule 1 (S -> LPAREN S RPAREN .)
+    RPAREN          reduce using rule 1 (S -> LPAREN S RPAREN .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for DOUBLEARROW in state 11 resolved as shift
+WARNING: shift/reduce conflict for ARROW in state 11 resolved as shift
+WARNING: shift/reduce conflict for HAT in state 11 resolved as shift
+WARNING: shift/reduce conflict for OR in state 11 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEARROW in state 12 resolved as shift
+WARNING: shift/reduce conflict for ARROW in state 12 resolved as shift
+WARNING: shift/reduce conflict for HAT in state 12 resolved as shift
+WARNING: shift/reduce conflict for OR in state 12 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEARROW in state 13 resolved as shift
+WARNING: shift/reduce conflict for ARROW in state 13 resolved as shift
+WARNING: shift/reduce conflict for HAT in state 13 resolved as shift
+WARNING: shift/reduce conflict for OR in state 13 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEARROW in state 14 resolved as shift
+WARNING: shift/reduce conflict for ARROW in state 14 resolved as shift
+WARNING: shift/reduce conflict for HAT in state 14 resolved as shift
+WARNING: shift/reduce conflict for OR in state 14 resolved as shift
+WARNING: shift/reduce conflict for DOUBLEARROW in state 15 resolved as shift
+WARNING: shift/reduce conflict for ARROW in state 15 resolved as shift
+WARNING: shift/reduce conflict for HAT in state 15 resolved as shift
+WARNING: shift/reduce conflict for OR in state 15 resolved as shift
